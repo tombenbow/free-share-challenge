@@ -1,0 +1,2 @@
+ASSUMPTIONS/DEVIATIONS FROM BRIEF
+Brief stated 'minimum and maximum share value that can be rewarded needs to be configurable from environment variables.'. I decided not to hold these values in a .env file, because with the way the brief specified for share prices to be distributed, I had no use for min/max share price variables.

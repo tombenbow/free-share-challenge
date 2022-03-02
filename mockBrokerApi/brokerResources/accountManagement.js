@@ -1,5 +1,5 @@
-import { isMarketOpen } from "./isMarketOpen.js";
-import { getLatestPrice } from "./getLatestPrice.js";
+import { isMarketOpen } from "./marketState.js";
+import { getLatestPrice } from "./latestPrices.js";
 
 let emmaRewardAccount = {
   AAPL: 2,

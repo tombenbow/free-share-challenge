@@ -1,12 +1,12 @@
 import * as chai from "chai";
 import chaiAsPromised from "chai-as-promised";
-import { listTradeableAssets } from "../brokerResources/listTradeableAssets.js";
-import { getLatestPrice } from "../brokerResources/getLatestPrice.js";
+import { listTradeableAssets } from "../brokerResources/tradeableAssets.js";
+import { getLatestPrice } from "../brokerResources/latestPrices.js";
 import {
   isMarketOpen,
   shutMarket,
   openMarket,
-} from "../brokerResources/isMarketOpen.js";
+} from "../brokerResources/marketState.js";
 import {
   buySharesInRewardsAccount,
   getRewardAccountPositions,

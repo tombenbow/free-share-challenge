@@ -1,1 +1,0 @@
-const claimFreeShare = async (userId) => {};
