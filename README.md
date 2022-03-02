@@ -1,6 +1,6 @@
 # free-share-challenge
 
-###scripts
+### scripts
 npm run getFreeShareTests //runs tests for functions that are involved with assigning a free share
 npm run brokerTests //runs tests for functions that mock a broker API
 
