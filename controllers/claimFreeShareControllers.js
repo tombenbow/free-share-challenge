@@ -1,7 +1,7 @@
 //Models
-import { claimFreeShareModel } from "../models/claimFreeShareModel";
+import { claimFreeShareModel } from "../models/claimFreeShareModel.js";
 //Helpers
-import { validateRequestBody } from "./validation";
+import { validateRequestBody } from "./validation.js";
 
 
 export const claimFreeShareController = async (
@@ -10,14 +10,14 @@ export const claimFreeShareController = async (
   next,
 ) => {
   try {
-    const params = req.body;
-    const validParams = await validateRequestBody(params);
+    const { body } = req;
+    const validBody = await validateRequestBody(body);
 
-    if (!validParams) throw new Error("Invalid Parameters");
+    if (!validBody) throw new Error("Invalid Parameters");
 
-    const dataObject = claimFreeShareModel(params);
+    claimFreeShareModel(body);
 
-    res.status(200).send(dataObject);
+    res.status(200).send('[RequestSuccessful] share transferred to user.');
   } catch (err) {
     next(err);
   }

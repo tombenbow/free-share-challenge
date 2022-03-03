@@ -1,4 +1,4 @@
-import { getRewardAccountPositions } from "../../mockBrokerApi/brokerResources/accountManagement.js";
+import { getRewardAccountPositions } from "../../mockBrokerApi/accountManagement.js";
 import { addUserToFreeShareQueue } from "../utils/freeShareQueue.js";
 
 export const returnBoundsOfShareValues = (num) => {

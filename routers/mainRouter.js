@@ -1,9 +1,9 @@
 //Express
 import { Router } from "express";
 //Routers
-import { claimFreeShareRouter } from "./claimFreeShareRouter";
+import { claimFreeShareRouter } from "./claimFreeShareRouter.js";
 //Errors
-import { send405Error } from "../errors/index";
+import { send405Error } from "../errors/index.js";
 
 export const mainRouter = Router();
 

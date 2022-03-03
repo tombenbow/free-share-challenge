@@ -27,17 +27,3 @@ export const openMarket = () => {
   nextOpeningTime = aDayInTheFuture;
   nextClosingTime = tenSecondsInTheFuture;
 };
-
-// const timeStamp = moment();
-// console.log(timeStamp)
-// var tenSecondsInTheFuture = moment().add(10, 'seconds');
-// let aDayInTheFuture = moment().add(1, 'day');
-// console.log(aDayInTheFuture)
-// console.log(tenSecondsInTheFuture)
-// let difference = tenSecondsInTheFuture.diff(timeStamp)
-// console.log(difference)
-
-// openMarket();
-// console.log(await isMarketOpen())
-// shutMarket();
-// console.log(await isMarketOpen())

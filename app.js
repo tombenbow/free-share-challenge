@@ -1,7 +1,7 @@
 //Express
 import express from "express";
 //Routers
-import { mainRouter } from "./routers/mainRouter";
+import { mainRouter } from "./routers/mainRouter.js";
 //Errors
 import { handleServerErrors, send405Error, sendCustomErrors } from "./errors/index.js";
 

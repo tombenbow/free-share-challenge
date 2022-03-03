@@ -1,9 +1,9 @@
 //Express
 import { Router } from "express";
 //Controllers
-import { claimFreeShareController } from "../controllers/claimFreeShareControllers";
+import { claimFreeShareController } from "../controllers/claimFreeShareControllers.js";
 //Errors
-import { send405Error } from "../errors/index";
+import { send405Error } from "../errors/index.js";
 
 export const claimFreeShareRouter = Router();
 

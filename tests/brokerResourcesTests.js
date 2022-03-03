@@ -1,18 +1,18 @@
 import * as chai from "chai";
 import chaiAsPromised from "chai-as-promised";
-import { listTradeableAssets } from "../brokerResources/tradeableAssets.js";
-import { getLatestPrice } from "../brokerResources/latestPrices.js";
+import { listTradeableAssets } from "../mockBrokerApi/tradeableAssets.js";
+import { getLatestPrice } from "../mockBrokerApi/latestPrices.js";
 import {
   isMarketOpen,
   shutMarket,
   openMarket,
-} from "../brokerResources/marketState.js";
+} from "../mockBrokerApi/marketState.js";
 import {
   buySharesInRewardsAccount,
   getRewardAccountPositions,
   setEmmaRewardAccount,
   moveSharesFromRewardsAccount,
-} from "../brokerResources/accountManagement.js";
+} from "../mockBrokerApi/accountManagement.js";
 
 chai.use(chaiAsPromised);
 const { expect } = chai;

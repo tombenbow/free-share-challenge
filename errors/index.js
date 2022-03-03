@@ -1,4 +1,5 @@
 export const sendCustomErrors = (err, req, res, next) => {
+  console.error(err)
   if (err.message === "Invalid Parameters")
     res.status(400).send({ msg: "Bad Request" });
   else if (err.status) {

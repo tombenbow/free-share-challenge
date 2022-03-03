@@ -1,13 +1,12 @@
 import * as chai from "chai";
 import chaiAsPromised from "chai-as-promised";
-import { setEmmaRewardAccount } from "../../mockBrokerApi/brokerResources/accountManagement.js";
+import { setEmmaRewardAccount } from "../mockBrokerApi/accountManagement.js";
 import {
   returnBoundsOfShareValues,
   isShareWithinBounds,
   pickShareForUser
-} from "../resources/selectShare.js";
-import { addUserToFreeShareQueue } from '../utils/freeShareQueue.js'
-import { transferShareToUser } from '../utils/transferShareToUser.js';
+} from "../models/resources/selectShare.js";
+import { addUserToFreeShareQueue } from '../models/utils/freeShareQueue.js';
 
 chai.use(chaiAsPromised);
 const { expect } = chai;
@@ -82,5 +81,3 @@ describe("pickShareForUser", () => {
       expect(result.success).to.eql(true)
     });
   });
-
-//TEST TRANSFER SHARE TO USER
