@@ -13,7 +13,6 @@ You must provide the key userId on the body of the call with any random string a
 ### NEXT STEPS
 I would create a 'free share queue' management system. If there are currently no shares available in emma's reward account within the given constraints to transfer to the user, the user and upperBound/lowerBound of their share value would be placed in 'queued rewards' sql table. At given intervals when the market is open, a microservice would top up Emma's account with a preset number of shares + whatever was currently in the 'queued rewards' table. Once those with 'queued' shares had been successfully bought they would be transferred to the user. The reason I would structure it like this is to avoid calling the broker api too many times, and also gives us an additional level of control on how many shares are being rewarded. Furthermore, topping Emma's acount up in one place at set times gives us more control over which shares go into the account. This also gives us the option to include certain shares which can be awarded in fractions. 
 
-
 ### ASSUMPTIONS/DEVIATIONS FROM BRIEF
 I chose not to use a .env file holding min/max share prices as the use of these variables was not aligned with the way share distribution was described in the brief.
 I probably spent more time/energy on the mock broker api than I should've. Nonetheless, the code is still there to look at alongside accompanying tests.
