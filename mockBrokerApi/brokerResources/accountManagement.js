@@ -5,6 +5,7 @@ let emmaRewardAccount = {
   AAPL: 2,
   HOG: 7,
   INTC: 3,
+  MSFT: 1
 };
 
 export const buySharesInRewardsAccount = async (tickerSymbol, quantity) => {
