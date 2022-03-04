@@ -5,8 +5,11 @@ Clone the repo, cd into it and run npm install.
 
 ### SCRIPTS
 npm run modelHelpersTests //runs tests for helper functions that are called from the model
+
 npm run brokerResourcesTests //runs tests for functions that mock broker API
+
 npm run appTests //runs tests for the api endpoints
+
 npm run api //runs api on http://localhost:3001/
 
 ### USING THE API
