@@ -48,7 +48,7 @@ describe("api", () => {
   it("POST 404 : route not found", async () => {
     return request(app)
       .post("/api/claim-free-share/NotARoute")
-      .send({ greeting: "salut" })
+      .send({ userId: "randomUserId" })
       .expect(404)
       .then(({ body }) => {
         expect(body.msg).to.eql("Route Not Found");
@@ -67,7 +67,7 @@ describe("api", () => {
   it("PATCH 405 : method not allowed", async () => {
     return request(app)
       .patch("/api/claim-free-share")
-      .send({ greeting: "salut" })
+      .send({ userId: "randomUserId" })
       .expect(405)
       .then(({ body }) => {
         expect(body.msg).to.eql("Method Not Allowed");
@@ -77,7 +77,7 @@ describe("api", () => {
   it("DELETE 405 : method not allowed", async () => {
     return request(app)
       .delete("/api/claim-free-share")
-      .send({ greeting: "salut" })
+      .send({ userId: "randomUserId" })
       .expect(405)
       .then(({ body }) => {
         expect(body.msg).to.eql("Method Not Allowed");

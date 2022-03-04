@@ -7,6 +7,7 @@ import {
   pickShareForUser
 } from "../models/resources/selectShare.js";
 import { addUserToFreeShareQueue } from '../models/utils/freeShareQueue.js';
+import { transferShareToUser } from "../models/utils/transferShareToUser.js";
 
 chai.use(chaiAsPromised);
 const { expect } = chai;
@@ -69,6 +70,14 @@ describe("pickShareForUser", () => {
         const result = await pickShareForUser(userId, lowerBound, upperBound);
         expect(result).to.eql("C");
       });
+      it("throws error 'no shares currently available, user added to free share queue' when emma reward account is empty [test itself should fail]", async () => {
+        setEmmaRewardAccount({})
+        const userId = 1;
+        const lowerBound = 3;
+        const upperBound = 10
+        const result = await pickShareForUser(userId, lowerBound, upperBound);
+        expect(result).to.eql("FAIL");
+      });
   });
 
   describe("addUserToFreeShareQueue", () => {
@@ -79,5 +88,15 @@ describe("pickShareForUser", () => {
       const result = await addUserToFreeShareQueue(userId, lowerBound, upperBound);
       expect(result).to.be.a("object");
       expect(result.success).to.eql(true)
+    });
+  });
+
+  describe("transferShareToUser", () => {
+    it("returns error message '[InternalServerError] failed to transfer share' when share passed to function is not in emma account [test itself should fail]", async () => {
+      setEmmaRewardAccount({});
+      const userId = 1;
+      const tickerSymbol = "C";
+      const result = await transferShareToUser(userId, tickerSymbol);
+      expect(result).to.eql("FAIL");
     });
   });

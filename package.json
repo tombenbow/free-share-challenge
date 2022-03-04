@@ -8,7 +8,7 @@
     "test": "tests"
   },
   "scripts": {
-    "brokerTests": "mocha tests/brokerResourcesTests.js",
+    "brokerResourcesTests": "mocha tests/brokerResourcesTests.js",
     "modelHelpersTests": "mocha tests/modelHelpersTests.js",
     "appTests": "mocha tests/appTests.js",
     "api": "node app.js"
