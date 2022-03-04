@@ -4,16 +4,16 @@
 Clone the repo, cd into it and run npm install. 
 
 ### SCRIPTS
-npm run modelHelpersTests //runs tests for helper functions that are called from the model
+`npm run modelHelpersTests` runs tests for helper functions that are called from the model
 
-npm run brokerResourcesTests //runs tests for functions that mock broker API
+`npm run brokerResourcesTests` runs tests for functions that mock broker API
 
-npm run appTests //runs tests for the api endpoints
+`npm run appTests` runs tests for the api endpoints
 
-npm run api //runs api on http://localhost:3001/
+`npm run api` runs api on http://localhost:3001/
 
 ### USING THE API
-Start the api by running the command npm run api. The available endpoint is api/claim-free-share, to which you must make a post request with the following body: {"userId": "randomUserId"} to transfer a share to the user.
+Start the api by running the command `npm run api`. The available endpoint is api/claim-free-share, to which you must make a post request with the following body: `{"userId": "randomUserId"}` to transfer a share to the user.
 
 ### NEXT STEPS
 I would create a 'free share queue' management system. If there are currently no shares available in emma's reward account within the given constraints to transfer to the user, the addUserToFreeShareQueue() function would be called, which would place the user's id and upperBound/lowerBound of their share value in a 'queued rewards' sql table. At given intervals when the market is open, a microservice would top up Emma's account with a preset number of shares + whatever was currently in the 'queued rewards' table. Once the queued shares had been bought they'd be transferred to the respective user. The reason I would structure it like this is to avoid calling the broker api too many times for single share purchases. This structure would also give us an additional level of control on how many shares are being rewarded over a given timeframe and which shares are being awarded, which opens the option to include fractions of specific 'popular' shares. 
@@ -24,7 +24,9 @@ To further ensure type safety and syntax consistency I would add a linter to the
 
 ### ASSUMPTIONS/DEVIATIONS FROM BRIEF
 I chose not to use a .env file holding min/max share prices as the use of these variables was not aligned with the way I approached distribution of various share prices.
+
 I probably spent more time/energy on the mock broker api than I should've, building functionality in the broker functions that ended up not being utilised by my api. Nonetheless, the code is still there to look at alongside accompanying tests.
+
 Validation of user params in place (use of yup etc.) is more than required, but is a demonstration of how I would potentially do server side validation of input params. 
 
 ### BONUS QUESTIONS:
